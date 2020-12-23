@@ -1,0 +1,378 @@
+    <!-- Create React App -->
+        <!-- npx create-react-app react-protfolio -->
+    
+    <!-- Install react-icons -->
+        <!-- npm install react-icons --save -->
+
+    <!-- Open VSCODE -->
+        <!-- code . -->
+
+    <!-- Start Server -->
+        <!-- npm start -->
+
+    <!-- Delete Files is not use [src] -->
+        <!-- เหลือแค่ที่ใช้ -->
+            <!-- 
+                App.css, App.js, Index.js;
+             -->
+
+    <!-- Delete import is not use in index.js, App.js[src] -->
+    
+    <!-- Delete css in App.css [src]-->
+
+    <!-- Get font from web google font and include in index.html [public] -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">  -->
+
+    <!-- Write CSS #1 -->
+        <!-- 
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: 'Poppins', sans-serif;
+            }
+        -->
+    
+    <!-- Create Folder Image And Choose your image background and avatar [public/images]-->
+    
+    <!-- Create Folder components and then create Banner.js [components\Banner.js] -->
+        <!-- 
+            import React from 'react'
+
+            const Banner = () => {
+                return <header className="header"></header> 
+            };
+
+            export default Banner
+        -->
+
+    <!-- Import Header in App.js -->
+        <!-- import Header from "./components/Banner" -->
+    
+    <!-- Add class header in App.css [src\App.css] -->
+        <!-- 
+            .header{
+                width: 100%;
+                height: 100vh;
+                background-image: url("/images/bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        -->
+        <!-- Error found : postcss-loader can't resolve image -->
+            <!-- แก้ไขโดยแก้ webpack.config.js -->
+                <!-- options: {...cssOptions, url: false} บรรทัดที่ 120-->
+     
+    <!-- แก้ไข emmet ใน setting เพื่อให้เขียนไวขึ้น -->
+        <!--     
+            "emmet.includeLanguages": {
+            "javascript": "javascriptreact"
+        } -->
+
+    <!-- Create Component : Nav.js [components\Nav.js] -->
+        <!-- 
+            import React from 'react'
+
+            const Nav = () => {
+                return (
+                    <nav className="navbar">
+                        <div className="container">
+                            <div className="navbar_container">
+                                <ul className="navbar_left">                    
+                                    <div className="navbar_left-logo">
+                                        <img src="/images/logo3.png" alt="logo"/>
+                                    </div>
+                                </ul>
+                                <ul className="navbar_right">
+                                    <li><a href="">Home</a></li>
+                                    <li><a href="">Service</a></li>
+                                    <li><a href="">About</a></li>
+                                    <li><a href="">Skills</a></li>
+                                    <li><a href="">Portfolio</a></li>
+                                    <li><a href="">Blog</a></li>
+                                    <li><a href="">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                )
+            };
+
+            export default Nav
+        -->
+    
+    <!-- เพิ่ม css ในส่วน Nav [src\App.css]-->
+        <!-- 
+            .navbar{
+                width: 100%;
+                height: 100px;
+                position: fixed;
+                top: 0;
+                background: #1f2235;
+                z-index: 1;
+            }
+                .navbar_container{
+                display: flex;
+                height: 100px;
+                align-items: center;
+                justify-content: space-between;
+            }
+                .navbar_left-logo{
+                width: 110px;
+            }
+                .navbar_right{
+                display: flex;
+                list-style-type: none;
+            }
+                .navbar_right li a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 500;
+                font-size: 18px;
+                padding: 0 15px;
+            }
+        -->
+
+    <!-- import nav component to App.js [src\App.js] -->
+        <!-- import Nav from "./components/Nav"; -->
+
+    <!-- เพิ่มข้อมูลในส่วนของ Banner component [src\components\Banner.js] -->
+        <!-- 
+            const Banner = () => {
+                return <header className="header">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-6">
+                                <div className="header_content">
+                                    <div className="header_section">
+                                        <ul className="header_ul">
+                                            <li>
+                                                <FaFacebookF />
+                                            </li>
+                                            <li>
+                                                <FaTwitter />
+                                            </li>
+                                            <li>
+                                                <FaPinterest />
+                                            </li>
+                                            <li>
+                                                <FaInstagram />
+                                            </li>
+                                            <li>
+                                                <FaFacebookF />
+                                            </li>
+                                        </ul>
+                                        <h1>I am Peerapong Boss</h1>
+                                        <p>
+                                            i'm Peerapong, developer with short time experience in this field
+                                        </p>
+                                        <div className="header_buttons">
+                                            <a href="" className="btn btn-outline ">
+                                                My Portfolio
+                                            </a>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <a href="" className="btn btn-smart">
+                                                <FaPlay className="play" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="banner_img">
+                                    <img src="/images/avatar_cut2.png" alt="avatar"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header> 
+            };
+        -->
+    
+    <!-- เพิ่ม css ในส่วนของ Banner -->
+        <!-- 
+            /* helpers */
+            .container {
+                width: 1200px;
+                margin: 0 auto;
+            }
+
+            /* Gird System */
+            .row{
+                display: flex;
+                width: 100%;
+            }
+            .col-6{
+                width: 50%;
+            }
+
+            .header_content{
+                display: flex;
+                align-items: center;
+                height: 100vh;
+                width: 100%;
+                color: #fff;
+            }
+            .header_ul{
+                list-style-type: none;
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .header_ul li{
+                width: 50px;
+                height: 50px;
+                border: 2px solid #ff5a57;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 10px;
+            } 
+            .header_ul li:first-child{
+                margin-left: 0;
+            }
+            .header_section h1{
+                font-size: 57px;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            .header_section p{
+                font-size: 26px;
+                font-weight: 300px;
+                line-height: 40px;
+                margin-bottom: 50px;
+            }
+
+            .btn{
+                outline: none;
+                border: none;
+                color: #fff;
+                text-decoration: none;
+            }
+            .btn-outline{
+                border: 2px solid #ff5a57;
+                border-radius: 50px;
+                padding: 13px 40px;
+            }
+            .btn-smart{
+                background: #ff5a57;
+                padding: 13px 40px;
+                border-radius: 50px;
+            }
+            .play {
+                font-size: 25px !important;
+                padding-top: 10px ;
+            }
+            .banner_img{
+                padding: 0 30px;
+                margin-top: 150px;
+            }
+            .banner_img img{
+                width: 100%;
+            }
+        -->
+
+    <!-- ใช้ useState แทนของเดิม [components\Banner.js] -->
+        <!-- 
+            const [state] = React.useState({
+                title: 'I am Peerapong', 
+                text: 'I\'m Peerapong, developer with short time experience in this field',
+                image: '/images/avatar_cut2.png'
+            });
+
+            <h1>{state.title}</h1>
+            <p>{state.text}</p>
+            <img src={state.image} alt="avatar"/>
+        -->
+    
+    <!-- Services.js -->
+        <!-- import componet Services.js และเรียกใช้ [components\Services.js] -->
+            <!-- import Services from "./components/Services"; -->
+            <!-- <Services /> -->
+
+        <!-- import React from 'react'
+            import {FaGithub} from "react-icons/fa";
+            const Services = () => {
+                    const [header] = React.useState({
+                        mainHeader: "SERVICES", 
+                        subHeading: "My Services", 
+                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum."
+                    });
+                    const [state] = React.useState([
+                        {
+                            id:1, 
+                            icon: "FaGithub",
+                            heading: "Web Development",
+                            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum.",
+                        },
+                        {
+                            id:2, 
+                            icon: "FaGithub",
+                            heading: "Photography",
+                            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum.",
+                        },
+                        {
+                            id:3, 
+                            icon: "FaGithub",
+                            heading: "Web Design",
+                            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum.",
+                        },
+                        {
+                            id:4, 
+                            icon: "FaGithub",
+                            heading: "FaGithub",
+                            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum.",
+                        },
+                        {
+                            id:5, 
+                            icon: "FaGithub",
+                            heading: "FaGithub",
+                            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum.",
+                        },
+                        {
+                            id:6, 
+                            icon: "FaGithub",
+                            heading: "FaGithub",
+                            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore veritatis porro alias, quae voluptates iste cum.",
+                        },
+                    ]);
+                return (
+                    <div className="services">
+                        <div className="container">
+                            <div className="services_header">
+                                <div className="common">
+                                    <h3 className="heading">{header.mainHeader}</h3>
+                                    <h1 className="mainHeader">{header.subHeading}</h1>
+                                    <p className="mainContent">{header.text}</p> 
+                                    <div className="commonBorder"></div>    
+                                </div>
+
+                                <div className="row bgMain">
+                                    {state.map(info => (
+                                        <div className="col-4 bgMain">
+                                            <div className="services_box">
+                                                <FaGithub className="commonIcons" />
+                                                <div className="services_box-header">{info.heading}</div>
+                                                <div className="service_box-p">{info.text}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            };
+
+            export default Services; 
+        -->
+
+        <!-- เพิ่ม css ใน App.css comment Services -->
+        <!-- เพิ่ม col-4 ใน App.css comment Grid System -->
+
+    <!-- About -->
+        <!-- Create file about.js -->
+        <!--  -->
